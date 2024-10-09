@@ -1,0 +1,204 @@
+/* Body Styles */
+body {
+  background-color: #dedada;
+}
+
+/* Text Styles */
+.text, .hero-text {
+  color: black;
+  background-color: #dedada;
+  font-size: 25px;
+}
+
+/* Header Styles */
+.header1 {
+  background-color: #dedada;
+  font-size: 1.3rem; /* Adjusted for consistency */
+}
+
+/* Media Queries */
+@media(min-width: 1700px) {
+  .icons-body {
+      background-image: url('/images/background-img.png');
+  }
+}
+
+/* Line Height */
+.lh-1 {
+  line-height: 1.2 !important; /* Important for overriding other styles */
+}
+
+/* Background and Search Styles */
+.bg-body-tertiary, .search {
+  background-color: #dedada !important;
+}
+.search-input::placeholder {
+  color: black !important; /* Change placeholder text color to black */
+}
+
+/* Carousel Styles */
+.caro {
+  color: black !important;
+}
+
+/* Card Styles */
+.card-homepage {
+  height: 300px;
+  width: 400px;
+}
+
+/* Rating Styles */
+.rating {
+  margin: 10px 0 0 10px; /* Combine margins for consistency */
+}
+
+/* Card Title and Text Styles */
+.card-title, .card-text, .card-media, .card-genre {
+  margin: 10px; /* General margin for consistency */
+}
+
+/* Read More Link Styles */
+.read-more {
+  margin: 10px 0 0 10px; /* Slight spacing */
+}
+
+/* Logo Styles */
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px; 
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex; /* Inline display for links */
+  justify-content: center; /* Center the nav items */
+}
+.nav-link {
+  margin: 0 10px; /* Space between nav items */
+}
+
+/* Review Card Styles */
+.review-card {
+  border: 1px solid #ccc; /* Card border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Inner padding */
+  margin: 10px; /* Space between cards */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.review-title {
+  font-size: 1.5rem; /* Title size */
+  margin-bottom: 10px; /* Space below title */
+}
+.review-type, .review-rating {
+  font-size: 1rem; /* Size for type and rating */
+  color: #555; /* Subtle color */
+}
+
+/* Image Styles */
+.kamand-img {
+  height: 300px;
+  width: 400px;
+  border-radius: 10%;
+}
+
+/* About Us Styles */
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Section Headers */
+.intro-section h1 {
+  font-size: 3.5rem; /* Intro section title size */
+}
+.mission-section, .team-section, .values-section, .cta-section {
+  margin-top: 40px; /* General spacing for sections */
+}
+
+/* Team Section Image */
+.team-section img {
+  border: 2px solid #ccc; /* Team member image border */
+}
+
+/* Values Section */
+.values-section ul {
+  list-style-type: none; /* Remove list styles */
+  padding: 0;
+}
+.values-section ul li {
+  margin-bottom: 10px;
+  font-size: 1.2rem; /* Increased font size for clarity */
+}
+
+/* Call to Action Button Styles */
+.cta-section a {
+  text-decoration: none;
+  color: white;
+  background-color: #007bff; /* Bootstrap primary color */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Lead Paragraph Style */
+.lead {
+  font-size: 1.5rem; /* Larger font for emphasis */
+}
+
+/* Contact Us Styles */
+.contact-us {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Intro Section in Contact */
+.intro-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.intro-section p {
+  font-size: 1.2rem;
+}
+
+/* Contact Info Styles */
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.contact-info p.lead {
+  font-size: 1.1rem;
+}
+
+/* Social Media, Newsletter, and Visit Us Styles */
+.social-media h2, .newsletter h2, .visit-us h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.social-media .btn {
+  margin: 10px;
+  width: 150px; /* Consistent button width */
+}
+.visit-us p, .newsletter p {
+  font-size: 1.1rem;
+  margin: 15px 0; /* Consistent margin for readability */
+}
+
+/* Margin Top for Specific Sections */
+.visit-us, .social-media {
+  margin-top: 100px;
+}
+
+/* Review Image Styles */
+.rev-image {
+  width: 250px;
+  height: 240px;
+}
+
+/* Genre Creation Font Size */
+.genre-create {
+  font-size: 1rem !important; /* Importance to override other styles */
+}

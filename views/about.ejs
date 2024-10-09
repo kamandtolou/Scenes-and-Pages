@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenes & Pages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="icons-body caro">
+
+    <!-- Include the header partial -->
+    <%-include("partials/header.ejs") %>
+
+<div class="container about-us header1">
+    <!-- Introduction Section -->
+    <section class="intro-section text-center my-5">
+        <h1 class="display-4">About Scenes & Pages</h1>
+        <p class="lead">
+            Welcome to <strong>Scenes & Pages</strong> – where books, movies, and series come to life through our community’s voices!
+        </p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section my-5">
+        <h2 class="text-center">Our Mission</h2>
+        <p class="text-center our-mission">
+            We aim to create a platform for readers, movie buffs, and series lovers to share their honest opinions, discover new favorites, and engage in meaningful discussions. Whether you're looking for your next binge-watch or want to find out if a book is worth your time, we've got you covered.
+        </p>
+    </section>
+
+    <!-- Meet the Creator -->
+    <section class="team-section my-5">
+        <h2 class="text-center">Meet the Creator</h2>
+        <div class="text-center">
+            <!-- Image of the creator -->
+            <img src="/images/Kamand-Tolou.jpg" alt="Your Name" class="kamand-img mb-2">
+            <p><strong>Kamand Tolou</strong></p>
+            <p>Founder & Passionate Storyteller</p>
+            <p>
+                Hi! I'm Kamand, a dedicated software developer and avid fan of everything storytelling. <br>
+                I built <strong>Scenes & Pages</strong> to create a space where we can discuss the stories we love and the ones we don’t.
+            </p>
+        </div>
+    </section>
+
+     <!-- Values Section -->
+    <section class="values-section my-5">
+        <h2 class="text-center">What We Value</h2>
+        <ul class="text-center">
+            <li><strong>Honest Reviews:</strong> We value honest, thoughtful feedback that helps others discover great books and films.</li>
+            <li><strong>Community:</strong> We believe in building a supportive and engaged community of fellow readers and watchers.</li>
+            <li><strong>Diversity:</strong> We embrace a wide range of genres, opinions, and voices.</li>
+        </ul>
+    </section>
+
+     <!-- Call to Action Section -->
+    <section class="text-center my-5">
+        <h3>Join Us!</h3>
+        <p>
+            Start exploring reviews or share your own insights with the world.<br>
+            <a href="/create" class="btn btn-dark mt-4">Share Your Review</a>
+        </p>
+    </section>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Include footer -->
+<%- include("partials/footer.ejs") %>
+</body>
+</html>

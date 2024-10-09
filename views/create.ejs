@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scenes&Pages</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="/styles/main.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+</head>
+<body class="icons-body">
+
+   <!-- Include header -->
+  <%- include("partials/header.ejs") %>
+
+  <div class="container-fluid mt-5 create">
+    <div class="row justify-content-center me-5">
+      <div class=" col-lg-7">
+        <!-- Input form -->
+        <div class="card p-4 mt-4">
+          <h4 class="mb-4">Share Your Review and Let the World Know! <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-film mb-1" viewBox="0 0 16 16">
+            <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+          </svg> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-book mb-1" viewBox="0 0 16 16">
+            <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-camera-reels-fill mb-1" viewBox="0 0 16 16">
+            <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+            <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
+          </svg>
+        </h4>
+          <form action="/submit-review" method="POST">
+            <!-- Title Input -->
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title" name="title" placeholder="Enter the title of the book/movie/series" required>
+            </div>
+            <!-- Review Text Area -->
+            <div class="mb-3">
+              <label for="review" class="form-label">My Review        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class=" mb-1 bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+              </svg></label>
+              <textarea class="form-control" id="review" rows="4" name="review" placeholder="Write your review here" required></textarea>
+            </div>
+
+            <!-- Genre Dropdown -->
+            <div class="mb-3">
+              <label for="genre" class="form-label">Genre</label>
+              <select class="form-select" id="genre" name="genre" >
+                <option selected>Select Genre</option>
+                <option value="Action">Action</option>
+                <option value="Drama">Drama</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Horror">Horror</option>
+                <option value="Sci-fi">Sci-Fi</option>
+                <option value="Sci-fi">Crime</option>
+                <option value="Sci-fi">Historical Fiction</option>
+                <option value="Sci-fi">Romance</option>
+                <option value="Sci-fi">Thriller</option>
+                <option value="Sci-fi">Literary Fiction</option>
+
+                
+              </select>
+              
+            <div class="mb-3">
+              <label for="Media_type" class="form-label">Media</label>
+              <select class="form-select" id="Media_type" name="mediaType" >
+                <option selected>Media Type</option>
+                <option value="Movie">Movie</option>
+                <option value="Series">Series</option>
+                <option value="Book">Book</option>
+              </select>
+            </div>
+            
+            <div class="rating-creat mb-3"> 
+            <label for="rating" class="form-label">Rating</label>
+            <select class="form-select" id="rating" name="rating" required>
+              <option value="1">1 Star</option>
+              <option value="2">2 Stars</option>
+              <option value="3">3 Stars</option>
+              <option value="4">4 Stars</option>
+              <option value="5">5 Stars</option>
+            </select>
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-light pt-3 pb-3 ps-4 pe-4 rounded-pill">Submit</button>
+            
+          </form>
+          
+        </div>
+      </div>
+      
+      <div class="row text justify-content-center me-5"></div>
+      <!-- Right side - Text Content -->
+      <div class="col-md-5 text text-center mt-5 mb-5">
+        <h3 class="mb-4">"Why Your Review Matters"</h3>
+        <p>
+          Reviews help others decide what to watch, read, or explore. By sharing your thoughts, you're giving others a glimpse into your experiences, whether it’s a movie, a book, or a series. Be sure to be descriptive and share how it made you feel.
+        </p>
+        <p>
+          Use the form on the left to share your honest feedback. Your review could help someone discover their new favorite story!
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Include footer -->
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>

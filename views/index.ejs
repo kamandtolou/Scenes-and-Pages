@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenes & Pages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+     <!-- Include header -->
+   <%-include("partials/header.ejs") %>
+
+    <!-- Hero section -->
+   <div class="container col-xxl-8 px-4">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5 border-bottom">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="/images/hero-img.jpg" class="d-block mx-lg-auto img-fluid rounded-5" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6 hero-text">
+        <h1 class="display-5 fw-bold lh-1 mb-4 text-center">Honest Reviews You Can Trust!</h1>
+        <p>Explore our latest reviews on books, movies, series!</p>
+        <p >At Scenes & Pages, we believe that every review can spark a conversation. Whether you’re a casual viewer or a hardcore fan, your insights matter.</p>
+            <p>  Share your thoughts and let’s explore the world of entertainment together.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-dark btn-lg px-4 me-md-2"><a href="#lates-reviews" style=" text-decoration: none"> See Reviews</a></button>
+
+          <form action="/create" method="GET"> 
+          <button type="submit" class="btn btn-outline-dark btn-lg px-4" >Write your first Review!</button>
+        </form>   
+        </div>
+      </div>
+    </div>
+    </div>
+  
+    <!-- Latest Reviews section -->
+    <div class="album py-5 bg-body-tertiary" id="lates-reviews">
+      <div class="container"> 
+        <h2 class="caro text-center mb-5">Latest Reviews</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <!-- Loop through the reviews array and display each review -->
+          <% for (let i = 0; i < 6; i++) { %>
+            <div class="col">
+              <div class="card card-homepage shadow-sm">
+                <% if (i < reviews.length) { %>
+                  <!-- If a review exists at the current index -->
+                  <div class="card-body review-card">
+                    <h5 class="card-title review-title"> <%= reviews[i].title %> </h5>
+                    <p class="card-text review-text text-truncate " style=" max-width: 700px "><%= reviews[i].review %></p>
+                    <p class="card-genre review-genre">Genre : <%= reviews[i].genre %></p>
+                    
+                    <p class="card-media review-media"><%= reviews[i].mediaType %></p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="rating review-rating"> 
+                          <%= reviews[i].rating %>
+                          <% if (reviews[i].rating > 1) { %>Stars<% } else { %>Star<% } %>
+                          <!-- Display stars for the rating -->
+                          <% for (let j = 0; j < reviews[i].rating; j++) { %>
+                              <i class="fa fa-star text-warning"></i>
+                          <% } %>
+                          <% for (let k = reviews[i].rating; k < 5; k++) { %>
+                              <i class="fa fa-star-o text-warning"></i>
+                          <% } %>
+                      </div>
+              
+                       <!-- 'Read More' link -->
+                      <p class="read-more">
+                          <a class="p-1 rounded" href="/review/<%= reviews[i].id %>">Read More</a>
+                      </p>
+                  </div>
+              </div>
+
+                
+        
+                <% } else { %>
+                  <!-- If no review exists, show placeholder content -->
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">No More Reviews</text>
+                  </svg>
+                  <div class="card-body">
+                    <p class="card-text">No more reviews to show.</p>
+                  </div>
+                <% } %>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JavaScript bundle -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Include footer -->
+   <%- include("partials/footer.ejs") %>
+</body>
+</html>
