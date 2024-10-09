@@ -1,7 +1,5 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { v4 as uuidv4 } from 'uuid';
-
 
 const app = express();
 const port = 3000;
@@ -101,7 +99,7 @@ app.post("/submit-review", (req, res) => {
         rating    } = req.body;
 
     const newReview = {
-        id: uuidv4(),
+        id:
         title,
         review,
         genre,
